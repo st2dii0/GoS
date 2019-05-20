@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Houses-->
+        <!--Game of Thrones-->
         <scene sceneID="LOE-mm-5up">
             <objects>
                 <tableViewController id="OgG-hW-hKm" customClass="HousesViewController" customModule="GoT" sceneMemberID="viewController">
@@ -41,10 +41,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7k-ow-c4M">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7k-ow-c4M">
                                             <rect key="frame" x="0.0" y="0.0" width="63" height="64.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="63" id="JZI-LM-2kc"/>
+                                                <constraint firstAttribute="height" constant="64.5" id="PdN-eV-eCf"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -64,6 +65,7 @@
                                 <connections>
                                     <outlet property="NameLabel" destination="7Nm-HC-vQB" id="xd5-8w-tng"/>
                                     <outlet property="WordsLabel" destination="tPG-tP-Yek" id="6rW-2h-yVR"/>
+                                    <outlet property="imageHouse" destination="n7k-ow-c4M" id="2sK-6Y-sy2"/>
                                     <segue destination="lfR-SA-NXx" kind="show" id="ElO-sY-GlC"/>
                                 </connections>
                             </tableViewCell>
@@ -73,7 +75,7 @@
                             <outlet property="delegate" destination="OgG-hW-hKm" id="ZIl-RX-yfL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Houses" id="eb6-WJ-T9D"/>
+                    <navigationItem key="navigationItem" title="Game of Thrones" id="eb6-WJ-T9D"/>
                     <connections>
                         <outlet property="tableView" destination="el1-AJ-P3Z" id="jQD-4Q-g6O"/>
                     </connections>

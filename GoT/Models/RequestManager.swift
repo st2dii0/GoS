@@ -22,4 +22,9 @@ struct RequestManager {
                 }
             }
         }
+    
+//    static func getCharacterByHouse(success: @escaping (Data)-> (),
+//                                    failure: @escaping(Error)->()){
+//        
+//    }
 }

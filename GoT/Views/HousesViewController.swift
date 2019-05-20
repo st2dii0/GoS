@@ -10,7 +10,7 @@ import UIKit
 
 class HousesViewController: UIViewController, UITableViewDataSource {
     
-    var house: [House]?
+    var house: [House] = []
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class HousesViewController: UIViewController, UITableViewDataSource {
     private func fetchHouses(){
         RequestManager.getHouses(success: {data in
             let decoder = JSONDecoder()
-            self.house = (try? decoder.decode([House].self, from: data))
+            self.house = (try? decoder.decode([House].self, from: data)) ?? []
             self.tableView.reloadData()
         }) {(error) in
             print(error)
@@ -30,13 +30,13 @@ class HousesViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return house?.count ?? 0
+        return house.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HousesCell", for: indexPath) as?
             HousesCell{
-            cell.configure(withHouse: house?[indexPath.row])
+            cell.configure(withHouse: house[indexPath.row])
             return cell
         }
         return UITableViewCell()
